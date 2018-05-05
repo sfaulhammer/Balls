@@ -1,6 +1,6 @@
 <html>
     <body>
-        <form action='balls.php' method='post'>
+        <form action='balls.php' method='get'>
             <input type='radio' name='ausgabe' value='h'> HTML
             <input type='radio' name='ausgabe' value='j'> JSON
             <button type="password" value="Los">Los</button>
@@ -38,7 +38,7 @@ class ball
         Durchmesser: $this->width <br>
         Material: $this->material <br>
 EOT;
-        if($_POST['ausgabe'] == "h") {
+        if($_GET['ausgabe'] == "h") {
             return $return;
         } else {
             echo json_encode($return);
@@ -60,7 +60,7 @@ $pingpongball = new Ball("PingPong", 10, "Plastik");
 $test1 = new Ball("Fußball", 30.75, "Gummi");
 $test = new Ball("Fußball", 30.75, "Gummi");
 
-if(isset($_POST['ausgabe'])) {
+if(isset($_GET['ausgabe'])) {
     echo($test.$test->volume()."<br>");
     echo($test1 . $test1->volume() . "<br>");
     echo($fussball . $fussball->volume() . "<br>");
