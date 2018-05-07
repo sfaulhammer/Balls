@@ -1,0 +1,56 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f1ee95ae1530b4d87eda13ad2eca154a",
+    "packages": [
+        {
+            "name": "sebastian/balls",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sfaulhammer/Balls.git",
+                "reference": "24c5570febf45d8c8abdbe24aef4d1995de7fd30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sfaulhammer/Balls/zipball/24c5570febf45d8c8abdbe24aef4d1995de7fd30",
+                "reference": "24c5570febf45d8c8abdbe24aef4d1995de7fd30",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "sfaulhammer\\baelle\\": "library/"
+                }
+            },
+            "license": [
+                "GNU"
+            ],
+            "authors": [
+                {
+                    "name": "sfaulhammer",
+                    "email": "s.faulhammer@gmx.at"
+                }
+            ],
+            "description": "The Library for the Balls",
+            "support": {
+                "source": "https://github.com/sfaulhammer/Balls/tree/master",
+                "issues": "https://github.com/sfaulhammer/Balls/issues"
+            },
+            "time": "2018-05-07T17:22:31+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "sebastian/balls": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

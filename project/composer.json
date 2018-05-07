@@ -9,7 +9,9 @@
             "email": "s.faulhammer@gmx.at"
         }
     ],
-    "require": {},
+    "require": {
+        "sebastian/balls":"dev-master"
+    },
     "repositories": {
         "Balls": {
             "type":"vcs",
