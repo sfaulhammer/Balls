@@ -41,10 +41,14 @@ abstract class ball
         if($_GET['ausgabe'] == "h") {
             if(isset($_GET['material']) && $this->material == $_GET['material'] ) {
                 return $return;
+            } else if(isset($_GET['material']) == false) {
+                return $return;
             }
             return "";
         } else {
             if(isset($_GET['material']) && $this->material == $_GET['material'] ) {
+                echo json_encode($return);
+            } else if (isset($_GET['material']) == false) {
                 echo json_encode($return);
             }
             return "";
@@ -54,7 +58,9 @@ abstract class ball
 }
 
 $fussball = new Fussball("Adidas Sport 1000", 30.75, "Gummi");
+$fussball2 = new Fussball("Adidas Sport 1000", 30.75, "Gummi");
 $basketball = new Basketball("NBA Pro Elite", 25.7, "Kautschuk");
+$basketball2 = new Basketball("NBA Pro Elite", 25.7, "Kautschuk");
 $pingpongball = new PingPongBall("Xang Li 5000", 10, "Plastik");
 
 
