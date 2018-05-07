@@ -18,4 +18,8 @@ class PingPongBall extends ball implements ballsInter
     {
         return (3 / 4) * pi() * ($this->width / 2);
     }
+    function getMaterial()
+    {
+        return $this->material;
+    }
 }

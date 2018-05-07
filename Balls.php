@@ -1,14 +1,16 @@
 <html>
-    <body>
-        <form action='Balls.php' method='get'>
-            <input type='radio' name='ausgabe' value='h'> HTML
-            <input type='radio' name='ausgabe' value='j'> JSON
-            <button type="submit" value="Los">Los</button>
-        </form>
-    </body>
+<body>
+<form action='Balls.php' method='get'>
+    <input type='radio' name='ausgabe' value='h'> HTML
+    <input type='radio' name='ausgabe' value='j'> JSON
+
+    <input type='radio' name='material' value='Gummi'> Gummi
+    <input type='radio' name='material' value='Kautschuk'> Kautschuk
+    <input type='radio' name='material' value='Plastik'> Plastik
+    <button type="submit" value="Los">Los</button>
+</form>
+</body>
 </html>
-
-
 <?php
 /**
  * Created by PhpStorm.
@@ -16,10 +18,9 @@
  * Date: 02.05.2018
  * Time: 08:56
  */
-
-
+require_once ("Basketball.php");
 require_once ("Fußball.php");
-
+require_once ("PingPongBall.php");
 abstract class ball
 {
     protected $name;
@@ -38,24 +39,28 @@ abstract class ball
         // TODO: Implement __toString() method.
         $return = "Name:".$this->name."<br>"."Durchmesser:".$this->width."<br>"."Material:".$this->material."<br>"."Volumen:".$this->volume()."<p>";
         if($_GET['ausgabe'] == "h") {
-            return $return;
+            if(isset($_GET['material']) && $this->material == $_GET['material'] ) {
+                return $return;
+            }
+            return "";
         } else {
-            echo json_encode($return);
+            if(isset($_GET['material']) && $this->material == $_GET['material'] ) {
+                echo json_encode($return);
+            }
             return "";
         }
 
     }
 }
 
-$fussball = new Fussball("Fußball", 30.75, "Gummi");
-/*
-$basketball = new Ball("Basketball", 25.7, "Kautschuk");
-$tennisball = new Ball("Tennis", 20, "Stoff");
-$pingpongball = new Ball("PingPong", 10, "Plastik");
-$test1 = new Ball("Fußball", 30.75, "Gummi");
-$test = new Ball("Fußball", 30.75, "Gummi");
-*/
+$fussball = new Fussball("Adidas Sport 1000", 30.75, "Gummi");
+$basketball = new Basketball("NBA Pro Elite", 25.7, "Kautschuk");
+$pingpongball = new PingPongBall("Xang Li 5000", 10, "Plastik");
+
+
 if(isset($_GET['ausgabe'])) {
     echo($fussball);
+    echo($basketball);
+    echo($pingpongball);
 }
 
