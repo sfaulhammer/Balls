@@ -1,0 +1,19 @@
+{
+    "name": "sebastian/project",
+    "description": "The App for the balls",
+    "type": "project",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "sfaulhammer",
+            "email": "s.faulhammer@gmx.at"
+        }
+    ],
+    "require": {},
+    "repositories": {
+        "Balls": {
+            "type":"vcs",
+            "url": "https://github.com/sfaulhammer/Balls.git"
+        }
+    }
+}

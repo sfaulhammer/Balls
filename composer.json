@@ -1,0 +1,18 @@
+{
+    "name": "sebastian/balls",
+    "description": "The Library for the Balls",
+    "type": "library",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "sfaulhammer",
+            "email": "s.faulhammer@gmx.at"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "sfaulhammer\\baelle\\": "library/"
+        }
+    }
+}
