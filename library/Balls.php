@@ -88,20 +88,3 @@ abstract class ball
     }
 }
 
-$fussball = new Fussball("Adidas Sport 1000", 30.75, "Gummi");
-$fussball2 = new Fussball("Nike Sport Elite", 30.75, "Gummi");
-$basketball = new Basketball("NBA Pro Elite", 25.7, "Kautschuk");
-$basketball2 = new Basketball("NBA Alpha Elite", 25.7, "Kautschuk");
-$pingpongball = new PingPongBall("Xang Li 5000", 10, "Plastik");
-$pingpongball2 = new PingPongBall("Xang Hu Ultra", 10, "Plastik");
-
-
-if(isset($_GET['ausgabe'])) {
-    echo($fussball);
-    echo($basketball);
-    echo($pingpongball);
-    echo($fussball2);
-    echo($basketball2);
-    echo($pingpongball2);
-}
-
