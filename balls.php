@@ -3,7 +3,7 @@
         <form action='balls.php' method='get'>
             <input type='radio' name='ausgabe' value='h'> HTML
             <input type='radio' name='ausgabe' value='j'> JSON
-            <button type="password" value="Los">Los</button>
+            <button type="submit" value="Los">Los</button>
         </form>
     </body>
 </html>
@@ -17,7 +17,9 @@
  * Time: 08:56
  */
 
-class ball
+require("ballsInter.php");
+
+class ball implements ballsInter
 {
     protected $name;
     protected $width;
@@ -33,11 +35,7 @@ class ball
     function __toString()
     {
         // TODO: Implement __toString() method.
-        $return = <<<EOT
-        Name: $this->name <br>
-        Durchmesser: $this->width <br>
-        Material: $this->material <br>
-EOT;
+        $return = "Name:".$this->name."<br>"."Durchmesser:".$this->width."<br>"."Material:".$this->material."<br>"."Umfang:".$this->volume()."<p>";
         if($_GET['ausgabe'] == "h") {
             return $return;
         } else {
@@ -47,9 +45,9 @@ EOT;
 
     }
 
-    function volume(): string
+    function volume(): float
     {
-        return "Umfang: ".(3 / 4) * pi() * ($this->width / 2)."<br>";
+        return (3 / 4) * pi() * ($this->width / 2);
     }
 
 }
