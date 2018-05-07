@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "sebastian/balls":"dev-master"
+        "sebastian/balls":"v1.0"
     },
     "repositories": {
         "Balls": {
