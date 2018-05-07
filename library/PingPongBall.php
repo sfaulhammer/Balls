@@ -5,8 +5,7 @@
  * Date: 07.05.2018
  * Time: 11:16
  */
-require_once ("Balls.php");
-require_once ("ballsInter.php");
+namespace sfaulhammer\baelle;
 
 class PingPongBall extends ball implements ballsInter
 {
@@ -16,10 +15,7 @@ class PingPongBall extends ball implements ballsInter
     }
     function volume(): float
     {
-        return (3 / 4) * pi() * ($this->width / 2);
+        return (3 / 4) * pi() * ($this->getWidth() / 2);
     }
-    function getMaterial()
-    {
-        return $this->material;
-    }
+
 }

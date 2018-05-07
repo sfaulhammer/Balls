@@ -1,6 +1,10 @@
+<?php
+namespace sfaulhammer\baelle;
+?>
+
 <html>
 <body>
-<form action='Balls.php' method='get'>
+<form action='../library/Balls.php' method='get'>
     <input type='radio' name='ausgabe' value='h'> HTML
     <input type='radio' name='ausgabe' value='j'> JSON
 
@@ -11,6 +15,7 @@
 </form>
 </body>
 </html>
+
 <?php
 /**
  * Created by PhpStorm.
@@ -18,9 +23,8 @@
  * Date: 02.05.2018
  * Time: 08:56
  */
-require_once ("Basketball.php");
-require_once ("Fußball.php");
-require_once ("PingPongBall.php");
+
+
 abstract class ball
 {
     protected $name;
@@ -34,10 +38,37 @@ abstract class ball
         $this->material = $material;
     }
 
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return float
+     */
+    public function getWidth(): float
+    {
+        return $this->width;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMaterial(): string
+    {
+        return $this->material;
+    }
+
+
+
     function __toString()
     {
         // TODO: Implement __toString() method.
-        $return = "Name:".$this->name."<br>"."Durchmesser:".$this->width."<br>"."Material:".$this->material."<br>"."Volumen:".$this->volume()."<p>";
+        $return = "Name:".$this->getName()."<br>"."Durchmesser:".$this->getWidth()."<br>"."Material:".$this->getMaterial()."<br>"."Volumen:".$this->volume()."<p>";
+
         if($_GET['ausgabe'] == "h") {
             if(isset($_GET['material']) && $this->material == $_GET['material'] ) {
                 return $return;
